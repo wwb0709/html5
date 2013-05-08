@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Ping Pong</title>	
+	<style>
+		#playgroud{
+		width: 100%;
+		background: #f60 url(pixel_grid.jpg);
+		height: 480px;
+		border:2px solid #789cb6;
+		box-shadow: 5px 5px 7px #999;
+		position: relative;
+		}
+		.ball{
+		 width: 200px;
+		height: 200px;
+		border-radius: 200px;
+		background:#b1e4ff;
+		border:2px solid #789cb6;
+		box-shadow: 5px 5px 7px #999;
+	
+		top:150px;
+		left:5px;
+			position: relative;
+		//-moz-border-radius: 120px; 
+		}
+		
+		.pad{
+		width: 120px;
+		height: 120px;
+		position: absolute;
+		top:5px;left:5px;
+		//border-radius: 120px;
+		background:#b1e4ff;
+		border:2px solid #789cb6;
+		box-shadow: 5px 5px 7px #999;
+		//-moz-border-radius: 120px; 
+		}
+		
+		#padB
+		{
+		left:320px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Ping Pong</h1>
+	</header>
+	
+	<div id = "game"> 
+		<div id = "playgroud">
+			<div id = "padA" class= "pad"></div>
+			<div id = "padB" class= "pad"></div>
+			<div id = "ball1" class= "ball"></div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	<footer>
+		Battle against your friend with Ping Pong. Enjoy.
+	</footer>
+
+<script src="js/jquery-1.4.4.min.js"></script>
+<script>
+// every code inside $(function(){}) will be run 
+// after the DOM is loaded and ready.
+// Var KEY = {
+// UP :38,
+// DOWN:40
+// 
+// }
+// $(function(){
+// 	// alert a message
+// 	alert("Welcome to the Ping Pong battle.");
+// 	
+// 	//$("#playgroud").css("top",400);
+// 	//$(".ball,#padA").css({"left":"200px","top":"200px"});
+// 	
+// 	
+// 	$(document).keydown(function(e){
+// 		switch(e.which)
+// 		{
+// 		case:KEY.UP:
+// 		alert("Welcome to the Ping Pong battle.");
+// 		var top = parseInt($("#ball1".css("top")));
+// 		$("#ball1").css("top",top+5);
+// 		break;
+// 		}
+// 	
+// 	});
+// });
+
+var KEY = {
+	UP: 38,
+	DOWN: 40,
+	W: 87,
+	S: 83
+}
+
+// code inside $(function(){} will run after the DOM is loaded and ready
+$(function(){
+
+	$("#ball1").clone.appendTo("#playgroud");
+	// listen to the key down event
+	$(document).keydown(function(e){
+      switch(e.which){
+        case KEY.UP:
+        	// get the current paddle B's top value in Int type
+        	var top = parseInt($("#ball1").css("top"));
+        	// move the paddle B up 5 pixels
+        	$("#ball1").css("top",top-5);
+        	break;
+        case KEY.DOWN:
+        	var top = parseInt($("#ball1").css("top"));
+        	// move the paddle B down 5 pixels
+        	$("#ball1").css("top",top+5);
+        	break;
+        case KEY.W:
+        	var top = parseInt($("#ball1").css("left"));
+        	// move the paddle A up 5 pixels
+			$("#ball1").css("top",top-5);
+        	break;
+        case KEY.S:
+			var top = parseInt($("#ball1").css("left"));
+			// move the paddle A drown 5 pixels
+			$("#ball1").css("top",top+5);
+        	break;
+      }
+    });
+});
+</script>
+</body>
+</html>

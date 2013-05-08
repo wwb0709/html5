@@ -1,0 +1,6 @@
+Readme:
+This folder contains the code example of chapter 1, Introducing HTML5 Games.
+1260_01_01_tradition_hover.htm : Shows the tradition hover effect.
+1260_01_02_transition.htm      : Shows the CSS3 Transition effect.
+1260_01_03_transform_scale.htm : Shows the CSS3 Transform Scale effect combining the CSS Transition.
+1260_01_04_transform.htm       : Shows the combination of CSS Transform and Transition.

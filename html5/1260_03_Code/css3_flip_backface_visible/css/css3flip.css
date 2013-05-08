@@ -1,0 +1,90 @@
+/*!
+ * CSS3 Card Games Example
+ * http://gamedesign.cc/html5games/CSS3-card-basic/
+ * 
+ * This is an example game for the book HTML5 Games Development: A Beginning Guide.
+ * 
+ * Copyright 2010, Thomas Mak Seng Hin
+ * makzan@gmail.com
+ *   
+ * All Right Reserved.
+ */
+ 
+body {
+	background: #9c9;
+}
+
+.card {
+	-webkit-perspective: 600;
+	width: 80px;
+	height: 120px;
+	margin: 8px;
+}
+
+.face {
+	border-radius: 10px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	
+	-moz-transition: all .3s;
+	-webkit-transition: all 3.3s;	
+	transition: all .3s;
+	
+	-webkit-backface-visibility: hidden;
+
+	
+}
+
+.front {
+	background: #966;
+	
+	/* ensure the front face on top of back face */
+
+}
+
+.back {
+	background: #eaa;
+	
+	-moz-transform: rotate3d(0,1,0,-180deg);
+	-webkit-transform: rotate3d(0,1,0,-180deg);
+	transform: rotate3d(0,1,0,-180deg);
+	
+	/* ensure the back face is below the front face */
+
+}
+
+.card-flipped .front {
+	-moz-transform: rotate3d(0,1,0,180deg);
+	-webkit-transform: rotate3d(0,1,0,180deg);
+	transform: rotate3d(0,1,0,180deg);
+	
+	/* ensure the front face is below the back face */
+
+}
+
+.card-flipped .back {
+	-moz-transform: rotate3d(0,1,0,0deg);
+	-webkit-transform: rotate3d(0,1,0,0deg);
+	transform: rotate3d(0,1,0,0deg);
+	
+	/* ensure the back face is on top of the front face */
+
+}
+
+
+/* define the face graphics of the card deck*/
+/* cardAA stands for Spade A */
+/* cardA10 stands for Spade 10 */
+/* cardAK stands for Spade K */
+/* cardB_ stands for Heart _ */
+/* cardC_ stands for Club _ */
+/* cardD_ stands for Diamond _ */
+
+.cardAK {
+	background: url(../images/AK.png);
+}
+
+.cardAQ {
+	background: url(../images/AQ.png);
+}
